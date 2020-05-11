@@ -16,7 +16,7 @@ function broadcast() {
             'rdfs': 'http://www.w3.org/2000/01/rdf-schema#'
         },
         '@id': uuid.v4(),
-        '@type': 'color:' + randomItem(['Blue', 'Green', 'Red', 'Yellow'])
+        '@type': 'color:' + randomItem(['Blue', 'Red', 'Yellow'])
     }
 
     const jsonldString = JSON.stringify(jsonld);
@@ -31,7 +31,7 @@ function broadcast() {
 console.log('Web Socket on port 8080!');
 
 (function loop() {
-    var rand = Math.round(Math.random() * 10000);
+    var rand = Math.round(Math.random() * 1000);
     setTimeout(function() {
         broadcast();
         loop();
